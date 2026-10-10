@@ -1,0 +1,11 @@
+{
+  "name": "san-martin-erp",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node tests/baseline.mjs && node tests/migration-b.mjs && node tests/operations.mjs && node tests/images.mjs && node tests/images-ui.cjs && node tests/documents-sql.mjs && node tests/access-sql.mjs && node tests/purchases-sql.mjs && node --test tests/csv.test.cjs tests/catalogs.test.cjs && node tests/documents-ui.cjs && node tests/access-ui.cjs && node tests/purchases-ui.cjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8"
+  }
+}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#154b40" />
+    <title>San Martín | ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="image-manager.css" />
+    <link rel="stylesheet" href="san-martin-theme.css" />
+  </head>
+  <body>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <main id="auth-view" class="auth-shell">
+      <section class="auth-panel">
+        <img class="brand-mark" src="assets/logo-san-martin.png" alt="Logotipo de San Martín" />
+        <p class="eyebrow">SAN MARTÍN · GESTIÓN EMPRESARIAL</p>
+        <h1>Todo lo que necesitas para gestionar San Martín.</h1>
+        <p class="muted">Administra catálogo, bodega, POS y e-commerce desde un mismo lugar.</p>
+        <div class="feature-list"><span>✓ Stock por ubicación</span><span>✓ Permisos por rol</span><span>✓ Trazabilidad total</span></div>
+      </section>
+      <section class="login-card">
+        <p class="eyebrow">BIENVENIDO</p><h2 id="auth-title">Ingresa a San Martín</h2>
+        <form id="login-form">
+          <label>Correo electrónico<input required type="email" id="email" placeholder="tu correo de trabajo" autocomplete="email" /></label>
+          <label>Contraseña<input required type="password" id="password" placeholder="••••••••" autocomplete="current-password" /></label>
+          <button class="primary full" type="submit">Iniciar sesión <span>→</span></button>
+        </form>
+        <form id="recovery-request-form" class="hidden">
+          <p class="muted">Te enviaremos un enlace para crear una nueva contraseña.</p>
+          <label>Correo electrónico<input required type="email" id="recovery-email" autocomplete="email" /></label>
+          <button class="primary full" type="submit">Enviar enlace</button>
+        </form>
+        <form id="password-setup-form" class="hidden">
+          <p class="muted">Configura una contraseña para acceder al ERP.</p>
+          <label>Nueva contraseña<input required type="password" id="new-password" minlength="8" autocomplete="new-password" /></label>
+          <label>Confirmar contraseña<input required type="password" id="confirm-password" minlength="8" autocomplete="new-password" /></label>
+          <button class="primary full" type="submit">Guardar contraseña</button>
+        </form>
+        <button type="button" class="link" id="forgot-password">¿Olvidaste tu contraseña?</button>
+        <button type="button" class="link hidden" id="back-to-login">Volver al inicio de sesión</button>
+        <p class="fine-print" id="auth-help">El acceso está protegido por los permisos de tu organización.</p>
+      </section>
+    </main>
+
+    <div id="app-view" class="app hidden">
+      <aside class="sidebar">
+        <div class="sidebar-brand"><img class="brand-mark" src="assets/logo-san-martin.png" alt="Logotipo de San Martín" /><span>San Martín<small>PAPELERÍA · LIBRERÍA</small></span></div>
+        <nav id="navigation">
+          <button class="nav-link active" data-page="dashboard"><i>▦</i> Resumen</button>
+          <p class="nav-title">CATÁLOGO</p>
+          <button class="nav-link" data-page="products"><i>□</i> Productos</button>
+          <button class="nav-link" data-page="product-images"><i>▧</i> Imágenes de productos</button>
+          <button class="nav-link" data-page="categories"><i>◇</i> Categorías</button>
+          <button class="nav-link" data-page="brands"><i>◉</i> Marcas</button>
+          <button class="nav-link" data-page="suppliers"><i>♧</i> Proveedores</button>
+          <button class="nav-link" data-page="units"><i>⌗</i> Unidades de medida</button>
+          <button class="nav-link" data-page="offers"><i>✦</i> Ofertas</button>
+          <button class="nav-link" data-page="ecommerce"><i>◈</i> E-commerce</button>
+          <p class="nav-title">OPERACIÓN</p>
+          <button class="nav-link" data-page="ecommerce-orders"><i>▤</i> Pedidos e-commerce</button>
+          <button class="nav-link" data-page="ecommerce-invoices"><i>▤</i> Facturas e-commerce</button>
+          <button class="nav-link" data-page="inventory"><i>▤</i> Existencias</button>
+          <button class="nav-link" data-page="inbound"><i>↙</i> Entradas</button>
+          <button class="nav-link" data-page="transfers"><i>⇄</i> Transferencias</button>
+          <button class="nav-link" data-page="counts"><i>✓</i> Conteos físicos</button>
+          <button class="nav-link" data-page="adjustments"><i>±</i> Ajustes autorizados</button>
+          <button class="nav-link" data-page="kardex"><i>☷</i> Kardex</button>
+          <button class="nav-link" data-page="replenishment"><i>↻</i> Reabastecimiento</button>
+          <button class="nav-link" data-page="purchase-orders"><i>▤</i> Órdenes de compra</button>
+          <button class="nav-link" data-page="valuation"><i>Q</i> Valorización</button>
+          <button class="nav-link" data-page="reservations"><i>◌</i> Reservas</button>
+          <button class="nav-link" data-page="returns"><i>↩</i> Devoluciones</button>
+          <button class="nav-link" data-page="outbound"><i>↗</i> Salidas</button>
+          <button class="nav-link" data-page="labels"><i>▥</i> Etiquetas físicas</button>
+          <button class="nav-link" data-page="stock-alerts"><i>⚠</i> Alertas</button>
+          <button class="nav-link" data-page="reports"><i>▥</i> Reportes</button>
+          <button class="nav-link" data-page="data-tools"><i>⇅</i> Importar y exportar</button>
+          <button class="nav-link" data-page="movements"><i>↕</i> Movimientos</button>
+          <button class="nav-link" data-page="locations"><i>⌖</i> Ubicaciones</button>
+          <p class="nav-title">SISTEMA</p>
+          <button class="nav-link" data-page="users"><i>♙</i> Usuarios y roles</button>
+          <button class="nav-link" data-page="audit"><i>◷</i> Auditoría</button>
+          <button class="nav-link" data-page="settings"><i>⚙</i> Configuración</button>
+        </nav>
+        <div class="sidebar-bottom"><div id="user-mini" class="user-mini"></div><button id="logout" class="icon-button" title="Cerrar sesión">↪</button></div>
+      </aside>
+      <section class="workspace">
+        <header class="topbar"><button id="mobile-menu" class="icon-button mobile-only" aria-label="Abrir menú">☰</button><div><p id="crumb" class="eyebrow">OPERACIÓN</p><h2 id="page-title">Resumen</h2></div><div class="top-actions"><button id="refresh" class="icon-button" title="Actualizar">↻</button><button class="primary page-action" id="new-button">+ Nuevo producto</button></div></header>
+        <div id="content" class="content"></div><footer class="workspace-footer">San Martín <span>Papelería · Librería · Gestión empresarial</span></footer>
+      </section>
+    </div>
+
+    <dialog id="modal"><div class="modal-head"><h2 id="modal-title">Nuevo</h2><button class="icon-button" data-close>×</button></div><form id="modal-form" class="form-grid"></form></dialog>
+    <template id="empty-template"><div class="empty"><div>◌</div><h3>No hay información para mostrar</h3><p>Cuando agregues registros aparecerán aquí.</p></div></template>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="data-access.js"></script>
+    <script src="app.js"></script>
+    <script src="auth-flow.js"></script>
+    <script src="stock.js"></script>
+    <script src="costs.js"></script>
+    <script src="pos-integration.js"></script>
+    <script src="ecommerce-integration.js"></script>
+    <script src="ecommerce-orders.js"></script>
+  <script src="alertas-automaticas.js"></script>
+  <script src="reports.js"></script>
+  <script src="data-tools.js"></script>
+  <script src="users-admin.js"></script>
+  <script src="audit.js"></script>
+  <script src="settings.js"></script>
+  <script src="executive-dashboard.js"></script>
+  <script src="ecommerce-invoices.js"></script>
+  </body>
+</html>
+
+
