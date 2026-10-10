@@ -1,0 +1,62 @@
+{
+  "source_project": "beasfybalepkdlomzazf",
+  "capture_date": "2026-10-09",
+  "state": "after Stage B (H01-H14)",
+  "tables": 44,
+  "views": 4,
+  "functions": 75,
+  "constraints": 239,
+  "indexes": 145,
+  "triggers": 36,
+  "policies": 99,
+  "roles": 6,
+  "permissions": 122,
+  "role_permissions": 372,
+  "storage_buckets": [
+    "ecommerce-anuncios-editoriales",
+    "ecommerce-anuncios-inicio",
+    "ecommerce-banners",
+    "ecommerce-categorias",
+    "ecommerce-marcas",
+    "productos"
+  ],
+  "extensions": [
+    {
+      "name": "pg_stat_statements",
+      "schema": "extensions",
+      "version": "1.11"
+    },
+    {
+      "name": "uuid-ossp",
+      "schema": "extensions",
+      "version": "1.1"
+    },
+    {
+      "name": "pgcrypto",
+      "schema": "extensions",
+      "version": "1.3"
+    },
+    {
+      "name": "supabase_vault",
+      "schema": "vault",
+      "version": "0.3.1"
+    }
+  ],
+  "included_migrations": [
+    "20261009135451_estabilizacion_h01_h09_20261009.sql",
+    "20261009184222_etapa_b_h10_h14.sql",
+    "20261009184808_etapa_b_rol_activo.sql",
+    "20261009185206_etapa_b_cliente_sin_rol.sql",
+    "20261009185850_etapa_b_imagen_url_portable.sql"
+  ],
+  "auth_trigger_cleanup": "only al_crear_usuario_perfil remains",
+  "grant_cleanup": "no TRUNCATE for anon or authenticated on business tables",
+  "excluded_data": [
+    "auth.users",
+    "public.perfiles",
+    "sales/orders",
+    "stock",
+    "company settings",
+    "storage.objects files"
+  ]
+}
